@@ -4,4 +4,4 @@ const {addUser} = require('../controllers/UserController');
 
 router.post('/StoreUser',addUser);
 
-module.exports = router ; 
+module.exports = router ;
