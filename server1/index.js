@@ -1,11 +1,13 @@
 const express = require('express');
 const CorsOptions = require('./config/cors');
 const userRoutes = require('./routes/users');
-const cors = require('cors');
+const cors = require('cors').CorsOptions;
+const limiter = require('./config/cors').limiter;
 const app = express();
 require('dotenv').config();
 app.use(express.json());
 app.use(cors(CorsOptions));
+app.use(limiter);
 
 app.use('/api',userRoutes);
 
